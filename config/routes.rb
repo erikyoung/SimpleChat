@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'index' => 'home#index'
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :messages
   root 'home#index'
   get 'log_out' => 'sessions#destroy'
 
