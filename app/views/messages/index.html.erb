@@ -10,7 +10,7 @@
 <tbody>
 	<% @messages.each do |message| %>
 		<tr>
-			<td><%= message.sender.name %></td>
+			<td><%= message.sender.name || "No body No body but you" %></td>
 			<td><%= message.subject %></td>
 		</tr>
 		<% end %>
