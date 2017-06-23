@@ -1,12 +1,16 @@
 
 
-<h1 class="hello text-center">Welcome!</h1>
-<p></p>
-<div class="booyah-box col-xs-10 col-xs-offset-1">
 
+
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+<% if current_user.present? %>
+<h1 class="hello text-center">Welcome to  <em>SimpleChat</em> <%= current_user.name %></h1>
+<% else %>
 	<%= link_to "Sign Up", new_user_path, class: 'btn btn-primary' %>
 	<%= link_to "Sign In", new_session_path, class: 'btn btn-primary' %>
+	<% end %>
 </div>
+
 
 
 

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 def index
+	@users = User.all
 end
 
 def new
@@ -10,8 +11,9 @@ def create
 	@user = User.new(user_params)
 	if @user.save
 		flash[:success] = "Welcome #{@user.name}"
-		redirect_to root_path
+		redirect_to users_path
 	else
+		flash[:error] = "Yikes! Password did not match!"
 		render 'new'
   end
 end
