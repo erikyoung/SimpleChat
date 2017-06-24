@@ -16,17 +16,22 @@ def create
 		flash[:error] = "Yikes! Password did not match!"
 		render 'new'
   end
+end
+
+  def show
+  end
 
   def search
   if params[:search].present?
       @user = @user.search(params[:search])
-    end
+   end
 end
+
 
 private
 
 def user_params
-	params.require(:user).permit(:name, :email, :password)
+	params.require(:user).permit(:name, :email, :password, :image_url)
 end
 end
 

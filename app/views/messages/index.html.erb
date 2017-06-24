@@ -1,3 +1,4 @@
+<div class="booyah-box col-xs-10 col-xs-offset-1">
 <h1 class="hello text-center">Messages</h1>
 
 <table class="table table-stripped">
@@ -20,7 +21,7 @@
             <% if message.read_at %>
               Read <%= time_ago_in_words(message.read_at) %> ago
             <% else %>
-              Unread
+               <strong>Unread</strong>
             <% end %>
           </td> 
           <td>
@@ -40,4 +41,13 @@
 			<%= select_tag :sort_direction, options_for_select([['Ascending', 'asc'], ['Descending', 'dsc']]), class: "form-control" %> <br />
 			<%= submit_tag "sort", class: 'btn btn-primary' %>
 		</div>
+
+		
+		</div>
+
+		<div class="button">
+			<%= link_to "Find Friends", users_path, class: 'btn btn-primary' %>
+		</div>
+
+
 <% end %>

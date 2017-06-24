@@ -4,6 +4,9 @@
 	margin-top: 30px;
 }
 
+strong {
+  color: red;
+}
 
 
 .booyah-box {
@@ -18,4 +21,14 @@
   margin-top: 10px;
   margin-bottom: 35px;
   padding: 20px 20px 20px 20px;
+}
+
+body {
+  background: image_url('cheap_diagonal_fabric.png');
+  background-size:100%;
+  font-family: 'IM Fell DW Pica', serif !important;
+}
+
+.btn-primary {
+  margin-top: 15px;
 }
