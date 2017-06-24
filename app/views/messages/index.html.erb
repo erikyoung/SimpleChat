@@ -5,14 +5,39 @@
 	<tr>
 		<th>Sender</th>
 		<th>Subject</th>
+		<th>Recipient</th>
+		<th>Message Status</th>
+		<th>Friend Status</th>
 	</tr>
 </thead>
 <tbody>
 	<% @messages.each do |message| %>
 		<tr>
-			<td><%= message.sender.name || "No body No body but you" %></td>
+			<td><%= link_to message.sender.name, message_path(message.id)  %></td>
 			<td><%= message.subject %></td>
+			<td><%= link_to message.recipient.name, messages_sent_path %><td>
+
+            <% if message.read_at %>
+              Read <%= time_ago_in_words(message.read_at) %> ago
+            <% else %>
+              Unread
+            <% end %>
+          </td> 
+          <td>
 		</tr>
 		<% end %>
 </tbody>
 </table>
+
+
+<div class="card card-block">
+	<%= form_tag nil, method: 'get' do %>
+	 <%= hidden_field_tag :messages, params[:messages] %>
+		<div class="form-inline">
+			<div class="form-group">
+				
+			<%= select_tag :sort_column, options_for_select([['Name', 'name'], ['Time', 'Time']]), class: 'form-control' %>
+			<%= select_tag :sort_direction, options_for_select([['Ascending', 'asc'], ['Descending', 'dsc']]), class: "form-control" %> <br />
+			<%= submit_tag "sort", class: 'btn btn-primary' %>
+		</div>
+<% end %>

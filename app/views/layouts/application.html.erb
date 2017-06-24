@@ -28,12 +28,17 @@
       <li class="nav-item">
        <%= link_to "Sign In", new_session_path, class: 'nav-link' %>
       </li>
+      <li class="nav-item">
+          <%= link_to "Sent messages", messages_sent_path, class: 'nav-link' %>
+        </li>
     </ul>
     <% end %>
     
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <%= form_tag(messages_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Messages" %>
+        <%= submit_tag "Search", :name => nil, :style => "color:blue;"  %>
+    <% end %>
     </form>
   </div>
 </nav> 

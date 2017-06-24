@@ -1,0 +1,31 @@
+<% if @messages.empty? %>
+  <% flash.now[:notice] = "You haven't sent any message!" %>
+<% else %>
+  <h1>Sent messages</h1>
+  <div class="jumbotron">
+  <table class="table table-striped">
+    <thead>
+      <th>To</th>
+      <th>Subject</th>
+      <th>Time</th>
+      <th>Status</th>
+    </thead>
+    <tbody>
+      <% @messages.each do |message| %>
+        <tr>
+          <td><%= message.recipient.name %></td>
+          <td><%= message.subject %></td>
+          <td>Sent <%= time_ago_in_words(message.created_at) %> ago</td>
+          <td>
+            <% if message.read_at %>
+              Read <%= time_ago_in_words(message.read_at) %> ago
+            <% else %>
+              Unread
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+<% end %>
