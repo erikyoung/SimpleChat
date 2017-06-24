@@ -18,13 +18,13 @@ strong {
   background: #fff;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-bottom: 35px;
   padding: 20px 20px 20px 20px;
 }
 
 body {
-  background: image_url('cheap_diagonal_fabric.png');
+  background: image_url('night.jpg');
   background-size:100%;
   font-family: 'IM Fell DW Pica', serif !important;
 }
@@ -32,3 +32,28 @@ body {
 .btn-primary {
   margin-top: 15px;
 }
+
+.navbar {
+  background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+ box-shadow: 0px 1px 3px #2a2a2a;
+
+}
+
+.navbar-toggleable-md .navbar-brand {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+
+  a { 
+ color: #FF0000; 
+ }
+
+ 
