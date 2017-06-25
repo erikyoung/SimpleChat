@@ -20,7 +20,7 @@
             <% if message.read_at %>
               Read <%= time_ago_in_words(message.read_at) %> ago
             <% else %>
-              Unread
+            <strong>Unread</strong>
             <% end %>
           </td>
         </tr>

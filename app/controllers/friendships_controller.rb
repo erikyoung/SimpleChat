@@ -1,8 +1,5 @@
 class FriendshipsController < ApplicationController
-	
-
-	def create
-		
+	def create		
 		@friendship = current_user.friendships.build(:friend_id => params[:friend_id])
 		if @friendship.save
 			flash[:notice] = "Dude, we're friends"

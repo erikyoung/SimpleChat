@@ -18,7 +18,7 @@
 			<td><%= message.subject %></td>
 			<td><%= link_to message.recipient.name, messages_sent_path %><td>
 
-            <% if message.read_at %>
+            <% if !message.read_at.nil? %>
               Read <%= time_ago_in_words(message.read_at) %> ago
             <% else %>
                <strong>Unread</strong>

@@ -11,14 +11,14 @@ has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id'
 
 def received_messages
 	Message.where(recipient_id: id)
-	end
+end
 
 def unread_messages
 	received_messages.where(read_at: nil)
 end
 
 def sent_messages
-	Message.where(sender_id: id)
+	Message.where(sender_id: self)
 end
 
 end

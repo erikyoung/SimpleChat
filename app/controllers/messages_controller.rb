@@ -9,20 +9,33 @@ class MessagesController < ApplicationController
 	end
 
 	def show
-		@message = Message.find_by(id: params[:id])
-		@message.is_read = true
-		@message.update(read_at: Time.now)
-		@message.save!
+		load_user
+		@messages = current_user.sent_messages
+		@message = Message.find_by(id: params[:id])		
+		@message.read_at = Time.now
+		@message.save
 	end
 
 	def sent
-    @user = User.find(current_user.id)
-    @messages = @user.sent_messages
-  end
+		load_user
+		@user = User.find(current_user.id)
+		@messages = current_user.sent_messages
+		@message = Message.find_by(id: params[:id])
+	end
+
+	def load_user
+		if params[:user_id]
+			@user = User.find params[:user_id]
+		else
+			@user = current_user
+		end
+	end
+
 
   def create
   	@message = Message.new message_params
   	@message.sender = current_user
+  	
   	if @message.save
   		flash[:success] = "Message sent!"
   		redirect_to messages_path
@@ -30,10 +43,12 @@ class MessagesController < ApplicationController
   		render 'new'
   	end
   end
+  def update
+  	@message = Message.last
+  end
 
   private
   def message_params
-    params.require(:message).permit(:subject, :body, :recipient_id)
+    params.require(:message).permit( :subject, :body, :recipient_id)
   end
-
 end

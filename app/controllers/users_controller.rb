@@ -11,11 +11,12 @@ def create
 	@user = User.new(user_params)
 	if @user.save
 		flash[:success] = "Welcome #{@user.name}"
+		current_user = @user
 		redirect_to users_path
 	else
 		flash[:error] = "Yikes! Password did not match!"
 		render 'new'
-  end
+  	end
 end
 
 def edit
