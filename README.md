@@ -6,7 +6,7 @@ Submitted by: **Erik**
 
 Time spent: **30** hours
 
-URL: **Insert your Heroku URL here**
+URL: **https://snapchat-erik.herokuapp.com/**
 
 ## User Stories
 
@@ -25,7 +25,7 @@ The following **required** functionality is complete:
 
 The following **optional** functionality is complete:
 
-* [ ] User can attach an image.
+* [X] User can attach an image.
 * [ ] User can have multiple recipients on one message. 
 * [ ] User can log in with Facebook. 
 * [ ] User A can "block" User B. If User A blocks User B, they will not see messages from User B. User B will not know they have been blocked.
@@ -43,6 +43,8 @@ The following **additional** features are implemented:
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
+
+http://imgur.com/OX8F77a
 
 ![Video Walkthrough](relative-path-to-your-gif-file-on-github-or-absolute-path-to-file-on-imgur-or-youtube)
 
