@@ -18,6 +18,10 @@ def create
   end
 end
 
+def edit
+	@user = User.find_by(id: params[:id])
+	end
+
   def show
   	@user = User.find_by(id: params[:id])
   end
@@ -27,6 +31,18 @@ end
       @user = @user.search(params[:search])
    end
 end
+
+def update
+	@user = User.find_by(id: params[:id])
+	if @user.save
+		flash[:success] = "Thank you."
+		redirect_to users_path, flash: {success: "Thank you for editing."}
+	else
+		render 'new'
+ 	end	
+ end
+
+
 
 
 private
