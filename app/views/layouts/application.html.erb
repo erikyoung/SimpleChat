@@ -27,13 +27,6 @@
         </li>
     </ul>
     <% end %>
-    
-    <form class="form-inline my-2 my-lg-0">
-      <%= form_tag(messages_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Messages" %>
-        <%= submit_tag "Search", :name => nil, :style => "color:blue;"  %>
-    <% end %>
-    </form>
   </div>
 </nav> 
 
