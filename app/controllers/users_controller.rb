@@ -26,11 +26,7 @@ def edit
   	@user = User.find_by(id: params[:id])
   end
 
-  def search
-  if params[:search].present?
-      @user = @user.search(params[:search])
-   end
-end
+  
 
 def update
 	@user = User.find_by(id: params[:id])
