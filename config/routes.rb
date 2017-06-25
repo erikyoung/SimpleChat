@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   	end
   end
   resources :friendships
-  root 'users#index'
+  root 'home#index'
   delete 'log_out' => 'sessions#destroy'
   get 'messages/sent' => 'messages#sent'
   
