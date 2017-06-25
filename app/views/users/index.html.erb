@@ -11,18 +11,25 @@
 <tbody>
 <% @users.each do |user| %>
 <tr>
-	<td><%= user.name %></td>
+	<td><%= link_to user.name, user_path(user.id) %></td>
 	<td><%= user.email %></td>
 	<td><%= user.image_url  %></td>
-	<td><%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post, class: "btn" %>
+	<td><%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post, class: "btn btn-success" %>
+
+
 
 	
 </tr>
 
 </tbody>
-
 <% end %>
+</table>
 
-
+<div class="button">
+  <%= link_to "Back to Messages", messages_path, class: 'btn btn-primary' %>
+</div>
 
 </div>
+
+
+
