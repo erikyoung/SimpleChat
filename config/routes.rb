@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :messages
+  resources :friendships
   root 'home#index'
   get 'log_out' => 'sessions#destroy'
   get 'messages/sent'
